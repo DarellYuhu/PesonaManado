@@ -1,3 +1,4 @@
+import {useNavigation} from '@react-navigation/native';
 import {
   Image,
   ScrollView,
@@ -8,6 +9,10 @@ import {
 } from 'react-native';
 
 const Home = () => {
+  const navigation = useNavigation();
+  const handleCategoryPress = category => {
+    navigation.navigate('TourList', {category});
+  };
   return (
     <ScrollView contentContainerStyle={styles.container}>
       {/* Header */}
@@ -31,15 +36,24 @@ const Home = () => {
             justifyContent: 'center',
             gap: 20,
           }}>
-          <TouchableOpacity activeOpacity={0.8} style={{alignItems: 'center'}}>
+          <TouchableOpacity
+            activeOpacity={0.8}
+            style={{alignItems: 'center'}}
+            onPress={() => handleCategoryPress('Pantai')}>
             <Image source={require('../../../assets/images/beach.png')} />
             <Text style={styles.text}>Pantai</Text>
           </TouchableOpacity>
-          <TouchableOpacity activeOpacity={0.8} style={{alignItems: 'center'}}>
+          <TouchableOpacity
+            activeOpacity={0.8}
+            style={{alignItems: 'center'}}
+            onPress={() => handleCategoryPress('Gunung')}>
             <Image source={require('../../../assets/images/mountain.png')} />
             <Text style={styles.text}>Gunung</Text>
           </TouchableOpacity>
-          <TouchableOpacity activeOpacity={0.8} style={{alignItems: 'center'}}>
+          <TouchableOpacity
+            activeOpacity={0.8}
+            style={{alignItems: 'center'}}
+            onPress={() => handleCategoryPress('Kolam')}>
             <Image source={require('../../../assets/images/pool.png')} />
             <Text style={styles.text}>Kolam</Text>
           </TouchableOpacity>
