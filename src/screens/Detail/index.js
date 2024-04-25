@@ -8,6 +8,10 @@ const Detail = ({route, navigation}) => {
     console.log('handleSheetChanges', index);
   }, []);
 
+  const handleDescription = item => {
+    navigation.navigate('Description', {item});
+  };
+
   return (
     <View style={styles.container}>
       <TouchableOpacity
@@ -117,6 +121,8 @@ const Detail = ({route, navigation}) => {
               </View>
             </View>
             <TouchableOpacity
+              activeOpacity={0.8}
+              onPress={() => handleDescription({category: 'beach'})}
               style={{
                 width: '100%',
                 paddingVertical: 15,
