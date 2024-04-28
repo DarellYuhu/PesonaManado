@@ -1,4 +1,5 @@
 import {Image, StyleSheet, Text, TouchableOpacity, View} from 'react-native';
+import {BgBubble10} from '../../../assets/icons';
 
 const Description = ({route, navigation}) => {
   return (
@@ -50,6 +51,10 @@ const Description = ({route, navigation}) => {
       <Text style={{color: 'black', fontWeight: 'bold', fontSize: 18}}>
         Lihat semua tanggapan
       </Text>
+
+      <BgBubble10
+        style={{position: 'absolute', top: '60%', right: -10, zIndex: -1}}
+      />
     </View>
   );
 };

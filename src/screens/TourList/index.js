@@ -7,6 +7,7 @@ import {
   TouchableOpacity,
   View,
 } from 'react-native';
+import {BgBubble4, BgBubble5} from '../../../assets/icons';
 
 const TourList = ({route}) => {
   const {category} = route.params;
@@ -58,6 +59,11 @@ const TourList = ({route}) => {
             </View>
           </TouchableOpacity>
         )}
+      />
+
+      <BgBubble4 style={{position: 'absolute', top: '8%', zIndex: -1}} />
+      <BgBubble5
+        style={{position: 'absolute', top: '60%', right: 0, zIndex: -1}}
       />
     </View>
   );

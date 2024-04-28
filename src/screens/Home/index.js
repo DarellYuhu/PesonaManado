@@ -7,6 +7,7 @@ import {
   TouchableOpacity,
   View,
 } from 'react-native';
+import {BgBubble1, BgBubble2, BgBubble3} from '../../../assets/icons';
 
 const Home = () => {
   const navigation = useNavigation();
@@ -71,11 +72,26 @@ const Home = () => {
             flexDirection: 'row',
             justifyContent: 'space-around',
           }}>
-          <Image source={require('../../../assets/images/beach-card-1.png')} />
-          <Image source={require('../../../assets/images/beach-card-2.png')} />
-          <Image source={require('../../../assets/images/beach-card-3.png')} />
+          <Image
+            source={require('../../../assets/images/beach-card-1.png')}
+            style={styles.list}
+          />
+          <Image
+            source={require('../../../assets/images/beach-card-2.png')}
+            style={styles.list}
+          />
+          <Image
+            source={require('../../../assets/images/beach-card-3.png')}
+            style={styles.list}
+          />
         </View>
       </View>
+
+      <BgBubble1 style={{position: 'absolute', top: 0, right: 0, zIndex: -1}} />
+      <BgBubble2 style={{position: 'absolute', top: '20%', zIndex: -1}} />
+      <BgBubble3
+        style={{position: 'absolute', top: '60%', right: 0, zIndex: -1}}
+      />
     </ScrollView>
   );
 };
@@ -92,5 +108,11 @@ const styles = StyleSheet.create({
   },
   text: {
     color: 'black',
+  },
+  list: {
+    width: 80,
+    height: 128,
+    objectFit: 'cover',
+    borderRadius: 10,
   },
 });
